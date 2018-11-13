@@ -10,7 +10,12 @@ describe('generator-yukio:app', () => {
       .withPrompts({ someAnswer: true });
   });
 
-  it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+  it('creates config files', () => {
+    assert.file([
+      'webpack.config.js',
+      'package.json',
+      '.babelrc',
+      'index.html',
+    ]);
   });
 });
