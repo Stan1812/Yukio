@@ -2,7 +2,7 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-
+const path = require('path');
 module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
@@ -29,12 +29,6 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'description',
         message: 'description',
-      },
-      {
-        type: 'confirm',
-        name: 'useSass',
-        message: 'Would you like to use Sass',
-        default: false,
       },
       {
         type: 'input',
@@ -73,6 +67,14 @@ module.exports = class extends Generator {
       this.destinationPath('webpack.config.js'),
     );
     this.fs.copy(
+      this.templatePath('_editorconfig'),
+      this.destinationPath('.editorconfig'),
+    );
+    this.fs.copy(
+      this.templatePath('_eslintrc.json'),
+      this.destinationPath('.eslintrc.json'),
+    );
+    this.fs.copy(
       this.templatePath('postcss.config.js'),
       this.destinationPath('postcss.config.js'),
     );
@@ -88,7 +90,8 @@ module.exports = class extends Generator {
 
   writing() {
     this.fs.copy(this.templatePath('src'), this.destinationPath('src'));
-    this.fs.copy(
+    this.fs.copy(this.templatePath('app.css'), this.destinationPath('app.css'));
+    this.fs.copyTpl(
       this.templatePath('index.html'),
       this.destinationPath('index.html'),
       {
