@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   output: {
     filename: 'bundle.[hash:4].js', // 添加hash可以防止文件缓存，每次都会生成4位的hash串
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
   },
   module: {
     rules: [
