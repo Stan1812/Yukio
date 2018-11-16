@@ -62,10 +62,12 @@ module.exports = class extends Generator {
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore'),
     );
-    this.fs.copy(
-      this.templatePath('webpack.config.js'),
-      this.destinationPath('webpack.config.js'),
-    );
+    // this.fs.copy(
+    //   this.templatePath('webpack.config.js'),
+    //   this.destinationPath('webpack.config.js'),
+    // );
+    this.fs.copy(this.templatePath('build'), this.destinationPath('build'));
+
     this.fs.copy(
       this.templatePath('_editorconfig'),
       this.destinationPath('.editorconfig'),
@@ -95,14 +97,14 @@ module.exports = class extends Generator {
       this.templatePath('index.html'),
       this.destinationPath('index.html'),
       {
-        title: this.appname,
+        title: this.props.projectName,
       },
     );
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'),
       {
-        name: this.props.name,
+        name: this.props.projectName,
         description: this.props.description,
         author: this.props.author,
         email: this.props.email,
