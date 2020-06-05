@@ -1,4 +1,5 @@
 # generator-yukio [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+Tools for generating projects quickly, based on Yeoman
 > yo generator
 
 ## Installation
