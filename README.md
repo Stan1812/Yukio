@@ -15,9 +15,7 @@ Then generate your new project:
 ```bash
 yo yukio
 ```
-## significance
-I don't know if it makes sense to write this small project, because there are a lot of mature scaffolding in the current front-end development, such as Vue-cli, Create-react-app, and so on. Maybe this little scaffold is just a little toy. But aren't programmers building wheels all the time? Toss more than life, right? And i will try my best to perfect this little toy in the future.
-## License
+
 
 MIT © [stan1812](libx.top)
 
